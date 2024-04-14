@@ -11,8 +11,9 @@ COPY ./ /usr/local/app/
 
 # install angular cli
 RUN npm install -g @angular/cli
+RUN npm install -g yarn
 # Install all the dependencies
-RUN npm install
+RUN yarn
 
 # Generate the build of the application
 RUN npm run build
