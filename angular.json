@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "crudtuto-Front": {
+    "achat-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,15 +17,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/crudtuto-Front",
+            "outputPath": "dist/achat-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
@@ -70,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "crudtuto-Front:build:production"
+              "browserTarget": "achat-frontend:build:production"
             },
             "development": {
-              "browserTarget": "crudtuto-Front:build:development"
+              "browserTarget": "achat-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "crudtuto-Front:build"
+            "browserTarget": "achat-frontend:build"
           }
         },
         "test": {
@@ -91,20 +88,15 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         }
       }
     }
   },
-  "defaultProject": "crudtuto-Front",
+  "defaultProject": "achat-frontend",
   "cli": {
     "analytics": "b67b3eaf-9a55-4ae0-9975-0239c1b3f481"
   }
