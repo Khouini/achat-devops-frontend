@@ -1,7 +1,7 @@
 # Stage 1: Compile and Build angular codebase
 
 # Use official node image as the base image
-FROM node:latest as build
+FROM node:14
 
 # Set the working directory
 WORKDIR /usr/local/app
@@ -10,7 +10,7 @@ WORKDIR /usr/local/app
 COPY ./ /usr/local/app/
 
 # install angular cli
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli@12
 # Install all the dependencies
 RUN npm install
 
