@@ -1,30 +1,17 @@
-# Stage 1: Compile and Build angular codebase
-
-# Use official node image as the base image
 FROM node:14
 
-# Set the working directory
-WORKDIR /usr/local/app
+WORKDIR /app
 
-# Add the source code to app
-COPY ./ /usr/local/app/
-
-# install angular cli
 RUN npm install -g @angular/cli@12
-# Install all the dependencies
+
+COPY package*.json ./
+
 RUN npm install
 
-# Generate the build of the application
-RUN npm run build
+COPY . .
 
+RUN ng build
 
-# Stage 2: Serve app with nginx server
+EXPOSE 4200
 
-# Use official nginx image as the base image
-FROM nginx:latest
-
-# Copy the build output to replace the default nginx contents.
-COPY --from=build /usr/local/app/dist/frontend-achat /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
+CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "4200", "--disable-host-check"]
