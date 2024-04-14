@@ -12,11 +12,10 @@ COPY ./ /usr/local/app/
 # install angular cli
 RUN npm install -g @angular/cli
 # Install all the dependencies
-RUN yarn
+RUN npm install
 
 # Generate the build of the application
 RUN npm run build
-
 
 # Stage 2: Serve app with nginx server
 
