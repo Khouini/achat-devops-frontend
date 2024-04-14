@@ -11,7 +11,7 @@ RUN npm run build --prod
 FROM nginx:latest as ngi
 
 RUN ls /dist/src/app/dist/
-COPY --from=build /dist/src/app/dist/crudtuto-Front /usr/share/nginx/html
+COPY --from=build /dist/src/app/dist/Frontend-Achat /usr/share/nginx/html
 COPY /nginx.conf /etc/nginx/conf.d/default.conf
 
 
